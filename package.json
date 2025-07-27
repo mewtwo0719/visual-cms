@@ -54,7 +54,9 @@
     "sharp": "0.34.2",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "@payloadcms/db-postgres": "3.49.0"
+    "@payloadcms/db-postgres": "3.49.0",
+    "@measured/puck": "^0.19.3",
+    "classnames": "^2.3.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -78,7 +80,8 @@
     "tailwindcss": "^3.4.3",
     "typescript": "5.7.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.2.3"
+    "vitest": "3.2.3",
+    "eslint-config-custom": "*"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0",
@@ -90,5 +93,6 @@
       "esbuild",
       "unrs-resolver"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.6.2+sha1.7f417eb782bab712a1a9bd0206887dcee502d03e"
 }
