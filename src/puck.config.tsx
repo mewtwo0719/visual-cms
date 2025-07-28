@@ -1,49 +1,46 @@
-import { Card, CardHeader } from '@/components/ui/card'
 import type { Config } from '@measured/puck'
 
+import { ButtonProps, PuckButtoConfiguration } from './components/PuckComponents/Common/Button'
+import {
+  ContainerProps,
+  PuckContainerConfiguration,
+} from './components/PuckComponents/Displays/Container'
+import { FlexProps, PuckFlexConfiguration } from './components/PuckComponents/Displays/Flex'
+import {
+  NavigationMenuProps,
+  PuckNavigationMenuConfiguration,
+} from './components/PuckComponents/General/NavigationMenu'
+import { PuckSelectConfiguration, SelectProps } from './components/PuckComponents/Inputs/Select'
+
 type Props = {
-  HeadingBlock: { title: string }
-  ButtonBlock: { value: string }
-  Card: {}
+  Button: ButtonProps
+  Flex: FlexProps
+  Select: SelectProps
+  NavigationMenu: NavigationMenuProps
+  Container: ContainerProps
 }
 
 export const config: Config<Props> = {
+  categories: {
+    display: {
+      components: ['Container', 'Flex'],
+    },
+    common: {
+      components: ['Button'],
+    },
+    input: {
+      components: ['Select'],
+    },
+    general: {
+      components: ['NavigationMenu'],
+    },
+  },
   components: {
-    HeadingBlock: {
-      fields: {
-        title: { type: 'text' },
-      },
-      defaultProps: {
-        title: 'Heading',
-      },
-      render: ({ title }) => (
-        <div style={{ padding: 64 }}>
-          <h1>{title}</h1>
-        </div>
-      ),
-    },
-    ButtonBlock: {
-      fields: {
-        value: { type: 'text' },
-      },
-      defaultProps: {
-        value: 'Button',
-      },
-      render: ({ value }) => (
-        <button className="bg-red-500 text-blue-600" style={{ padding: '5px 20px 30px 40px' }}>
-          <p>{value}</p>
-        </button>
-      ),
-    },
-    Card: {
-      render: ({}) => (
-        <div className="col-span-4" key={312321}>
-          <Card className="h-full">
-            <CardHeader>Title of card</CardHeader>
-          </Card>
-        </div>
-      ),
-    },
+    Flex: PuckFlexConfiguration,
+    Button: PuckButtoConfiguration,
+    Select: PuckSelectConfiguration,
+    NavigationMenu: PuckNavigationMenuConfiguration,
+    Container: PuckContainerConfiguration,
   },
 }
 

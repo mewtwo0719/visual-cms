@@ -27,6 +27,10 @@ const config = {
     'bg-success/30',
     'border-warning',
     'bg-warning/30',
+    {
+      pattern:
+        /^(bg|text|border|outline|ring|stroke|fill)-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(50|100|200|300|400|500|600|700|800|900)$/,
+    },
   ],
   theme: {
     container: {
