@@ -31,6 +31,11 @@ const config = {
       pattern:
         /^(bg|text|border|outline|ring|stroke|fill)-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(50|100|200|300|400|500|600|700|800|900)$/,
     },
+    {
+      pattern:
+        /^(hover:bg|hover:text|hover:border)-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(50|100|200|300|400|500|600|700|800|900)$/,
+      variants: ['hover'],
+    },
   ],
   theme: {
     container: {

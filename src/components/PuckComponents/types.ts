@@ -21,3 +21,35 @@ type DropZoneProps = {
   collisionAxis?: DragAxis
 }
 export type SlotComponent = (props?: Omit<DropZoneProps, 'zone'>) => ReactNode
+
+export type Colors =
+  | 'red'
+  | 'orange'
+  | 'amber'
+  | 'yellow'
+  | 'lime'
+  | 'green'
+  | 'emerald'
+  | 'teal'
+  | 'cyan'
+  | 'sky'
+  | 'blue'
+  | 'indigo'
+  | 'violet'
+  | 'purple'
+  | 'fuchsia'
+  | 'pink'
+  | 'rose'
+  | 'white'
+
+export type ColorWeights =
+  | '50'
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900'
