@@ -160,6 +160,7 @@ export interface Website {
      */
     image?: (number | null) | Media;
     description?: string | null;
+    puck_config?: string | null;
   };
   publishedAt?: string | null;
   slug?: string | null;
@@ -1037,6 +1038,7 @@ export interface WebsitesSelect<T extends boolean = true> {
         title?: T;
         image?: T;
         description?: T;
+        puck_config?: T;
       };
   publishedAt?: T;
   slug?: T;

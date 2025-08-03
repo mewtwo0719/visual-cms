@@ -32,6 +32,25 @@ export const Websites: CollectionConfig<'websites'> = {
   },
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
+
+    components: {
+      edit: {
+        //editMenuItems: ['@/components/Dashboard/GenerateWebsite#GenerateWebsite'],
+        beforeDocumentControls: ['@/components/Dashboard/GenerateWebsiteServer#GenerateWebsite'],
+        //SaveButton: '@/components/Dashboard/GenerateWebsite#GenerateWebsite',
+        // PublishButton: '@/components/Dashboard/GenerateWebsite#GenerateWebsite',
+        // PreviewButton: '@/components/Dashboard/EditWebsite#EditWebsite',
+      },
+
+      // ['@/components/Dashboard/GenerateWebsite#GenerateWebsite'],
+      // elements: {
+      //   beforeDocumentControls: ['src/components/BeforeDashboard/SeedButton#SeedButton'],
+      // },
+      // edit: {
+      //   Button: 'src/components/BeforeDashboard/SeedButton#SeedButton',
+      // },
+    },
+
     livePreview: {
       url: ({ data, req }) => {
         const path = generatePreviewPath({
@@ -100,6 +119,29 @@ export const Websites: CollectionConfig<'websites'> = {
               titlePath: 'meta.title',
               descriptionPath: 'meta.description',
             }),
+            {
+              name: 'puck_config',
+              label: 'Puck',
+              type: 'code',
+              admin: {
+                language: 'json',
+                readOnly: true,
+                editorOptions: {
+                  wordWrap: 'on',
+                  wrappingStrategy: 'advanced',
+                  renderWhitespace: 'boundary',
+                  tabSize: 20,
+                  lineNumbers: 'off',
+                  fontSize: 14,
+                  minimap: { enabled: false },
+                  formatOnPaste: true,
+                  formatOnType: true,
+                  folding: true,
+                  smoothScrolling: true,
+                  padding: { top: 20, bottom: 20 },
+                },
+              },
+            },
           ],
         },
       ],

@@ -17,29 +17,70 @@ import { Client } from './client'
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ puckPath: string[] }>
+  searchParams: { [key: string]: string | string[] | undefined }
 }): Promise<Metadata> {
   const { puckPath = [] } = await params
   const path = `/${puckPath.join('/')}`
+  // const heads = await headers()
+  // //console.log('HEEDARE:: ', heads)
+  // const referer = heads.get('referer')
 
+  // let id: string | null = null
+
+  // if (referer) {
+  //   try {
+  //     const url = new URL(referer)
+  //     id = url.searchParams.get('id')
+  //   } catch (err) {
+  //     console.warn('Failed to parse referer URL:', err)
+  //   }
+  // }
+
+  const page = await getPage(path, searchParams.id as unknown as number)
   return {
-    title: getPage(path)?.root.props?.title,
+    title: page?.root.props?.title,
   }
 }
 
-export default async function Page({ params }: { params: Promise<{ puckPath: string[] }> }) {
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ puckPath: string[] }>
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  console.log('THE PUCK WEBSITE SHOW IS RENDERED')
   const { puckPath = [] } = await params
   const path = `/${puckPath.join('/')}`
-  const data = getPage(path)
 
+  // console.log('Search params server component: ', await searchParams, await params)
+
+  // const heads = await headers()
+  // //console.log('HEEDARE:: ', heads)
+  // const referer = heads.get('referer')
+
+  // let id: string | null = null
+
+  // if (referer) {
+  //   try {
+  //     const url = new URL(referer)
+  //     id = url.searchParams.get('id')
+  //   } catch (err) {
+  //     console.warn('Failed to parse referer URL:', err)
+  //   }
+  // }
+
+  // console.log('THE GOTTEN IDL ', id)
+  const data = await getPage(path, searchParams.id as unknown as number)
   if (!data) {
     return notFound()
   }
-
   return <Client data={data} />
 }
 
 // Force Next.js to produce static pages: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // Delete this if you need dynamic rendering, such as access to headers or cookies
-export const dynamic = 'force-static'
+//export const dynamic = 'force-static'
