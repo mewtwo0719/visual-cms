@@ -1,0 +1,21 @@
+{
+    "name": "tailwind3-html",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "build": "tailwindcss -i ./styles.css -o ./src/output.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+      "au": "^2.0.0-beta.14",
+      "postcss": "^8.4.38",
+      "tailwindcss": "^3.4.3"
+    },
+    "dependencies": {
+      "@tailwindcss/typography": "^0.5.13",
+      "tailwindcss-animate": "^1.0.7"
+    }
+  }

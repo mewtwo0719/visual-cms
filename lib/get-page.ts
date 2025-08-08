@@ -22,6 +22,10 @@ export const getPage = async (path: string, id: number) => {
 
   const data = JSON.parse(result.meta?.puck_config as string)
 
+  console.log('WITHOUT PARSE: ', result.meta?.puck_config)
+
+  console.log('WIT PARSE: ', JSON.parse(result.meta?.puck_config as string))
+
   return data
 
   return allData ? allData[path] : null

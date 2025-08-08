@@ -11,11 +11,26 @@ export function Client({ data }: { data: Data }) {
     console.log('THE DATA PASSED DOWN TO CLIENT: ', data)
   }, [data])
 
-  const html = ReactDOMServer.renderToStaticMarkup(<Render config={config} data={data} />)
-  console.log(html)
+  console.log('DATA BEFORE SEDNING: ', data)
+  const html = ReactDOMServer.renderToStaticMarkup(
+    <>
+      {/* <div>
+        <Button>Test</Button>
+      </div>
+      , */}
+      <>
+        <Render
+          config={config}
+          data={data || { content: [{ type: 'text', props: { text: 'Fallback' } }] }}
+        />
+      </>
+    </>,
+  )
+  console.log('HTML: ', html, config, data)
   return (
     <>
       <Render config={config} data={data} />
     </>
   )
 }
+export const dynamic = 'force-static'
