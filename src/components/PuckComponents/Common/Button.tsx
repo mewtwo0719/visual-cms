@@ -8,7 +8,11 @@ export interface ButtonProps {
 }
 
 export function PuckButton(props: ButtonProps) {
-  return <Button variant={props.variant}>{props.text}</Button>
+  return (
+    <Button variant={props.variant} style={{ display: 'initial' }}>
+      {props.text}{' '}
+    </Button>
+  )
 }
 
 export const PuckButtoConfiguration: PuckConfigurationType<ButtonProps> = {

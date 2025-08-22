@@ -65,7 +65,11 @@ export default async function Page({ params }: { params: Promise<{ puckPath: str
   const path = `/${puckPath.join('/')}`
   const data = await getPage(path, id as unknown as number)
 
-  return <Client path={path} data={data || {}} />
+  return (
+    <>
+      <Client path={path} data={data || {}} />
+    </>
+  )
 }
 
-export const dynamic = 'force-dynamic'
+//export const dynamic = 'force-dynamic'

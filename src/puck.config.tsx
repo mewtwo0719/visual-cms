@@ -6,41 +6,63 @@ import {
   PuckContainerConfiguration,
 } from './components/PuckComponents/Displays/Container'
 import { FlexProps, PuckFlexConfiguration } from './components/PuckComponents/Displays/Flex'
+import { PuckRowConfiguration, RowProps } from './components/PuckComponents/Displays/Row'
 import {
-  NavigationMenuProps,
-  PuckNavigationMenuConfiguration,
-} from './components/PuckComponents/General/NavigationMenu'
+  PuckSectionConfiguration,
+  SectionProps,
+} from './components/PuckComponents/Displays/Section'
+
+import { IconProps, PuckIconConfiguration } from './components/PuckComponents/Common/Icon'
 import { PuckSelectConfiguration, SelectProps } from './components/PuckComponents/Inputs/Select'
+import { AboutProps, PuckAboutConfiguration } from './components/PuckComponents/Sections/About'
+import { HeaderProps, PuckHeaderConfiguration } from './components/PuckComponents/Sections/Header'
+import { HeroProps, PuckHeroConfiguration } from './components/PuckComponents/Sections/Hero'
+import { PuckTabsConfiguration, TabsProps } from './components/PuckComponents/Sections/Tabs'
 
 type Props = {
   Button: ButtonProps
   Flex: FlexProps
   Select: SelectProps
-  NavigationMenu: NavigationMenuProps
+  Icon: IconProps
   Container: ContainerProps
+  Hero: HeroProps
+  Header: HeaderProps
+  About: AboutProps
+  Tabs: TabsProps
+  Section: SectionProps
+  Row: RowProps
 }
 
 export const config: Config<Props> = {
   categories: {
     display: {
-      components: ['Container', 'Flex'],
+      components: ['Container', 'Flex', 'Section', 'Row'],
     },
     common: {
-      components: ['Button'],
+      components: [],
     },
     input: {
-      components: ['Select'],
+      components: [],
     },
     general: {
-      components: ['NavigationMenu'],
+      components: ['Tabs'],
+    },
+    sections: {
+      components: ['Hero', 'Header', 'About'],
     },
   },
   components: {
     Flex: PuckFlexConfiguration,
     Button: PuckButtoConfiguration,
     Select: PuckSelectConfiguration,
-    NavigationMenu: PuckNavigationMenuConfiguration,
     Container: PuckContainerConfiguration,
+    Hero: PuckHeroConfiguration,
+    Header: PuckHeaderConfiguration,
+    About: PuckAboutConfiguration,
+    Tabs: PuckTabsConfiguration,
+    Section: PuckSectionConfiguration,
+    Row: PuckRowConfiguration,
+    Icon: PuckIconConfiguration,
   },
 }
 

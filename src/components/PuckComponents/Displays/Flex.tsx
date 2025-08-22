@@ -1,3 +1,4 @@
+import { PuckIcon } from '../Common/Icon'
 import { PuckConfigurationType } from '../types'
 
 export interface FlexProps {
@@ -63,6 +64,12 @@ export const PuckFlexConfiguration: PuckConfigurationType<FlexProps> = {
       ],
     },
   },
+  label: (
+    <div className="bg-red-500 flex flex-col">
+      Helloo <PuckIcon iconColor="blue" iconName="menu" iconSize={24} />
+      <PuckIcon iconColor="blue" iconName="menu" iconSize={24} />
+    </div>
+  ),
   render: ({ content: Content, direction, padding, gapX, gapY, align, justify, wrap, puck }) => {
     const alignClass = align ? `items-${align}` : ''
     const justifyClass = justify ? `justify-${justify}` : ''

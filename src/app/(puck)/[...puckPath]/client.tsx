@@ -33,4 +33,4 @@ export function Client({ data }: { data: Data }) {
     </>
   )
 }
-export const dynamic = 'force-static'
+//export const dynamic = 'force-static'

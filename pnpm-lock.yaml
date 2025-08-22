@@ -83,6 +83,9 @@ importers:
       graphql:
         specifier: ^16.8.2
         version: 16.11.0
+      lucide:
+        specifier: ^0.539.0
+        version: 0.539.0
       lucide-react:
         specifier: ^0.378.0
         version: 0.378.0(react@19.1.0)
@@ -3975,6 +3978,9 @@ packages:
     resolution: {integrity: sha512-u6EPU8juLUk9ytRcyapkWI18epAv3RU+6+TC23ivjR0e+glWKBobFeSgRwOIJihzktILQuy6E0E80P2jVTDR5g==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
+
+  lucide@0.539.0:
+    resolution: {integrity: sha512-FBF3rgamBJEwoOnE1NW6uPD++Al/VQA+TC3vRCoIky4Sv0Se7P22axPQ7VA85swPPGe843lztUxo8T23PDrFAA==}
 
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
@@ -10037,6 +10043,8 @@ snapshots:
   lucide-react@0.378.0(react@19.1.0):
     dependencies:
       react: 19.1.0
+
+  lucide@0.539.0: {}
 
   lz-string@1.5.0: {}
 
