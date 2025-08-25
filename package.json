@@ -22,7 +22,7 @@
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
   },
   "dependencies": {
-    "@measured/puck": "^0.19.3",
+    "@measured/puck": "^0.20.0",
     "@payloadcms/admin-bar": "3.49.0",
     "@payloadcms/db-postgres": "3.49.0",
     "@payloadcms/live-preview-react": "3.49.0",

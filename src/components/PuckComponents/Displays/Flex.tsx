@@ -1,5 +1,5 @@
+import { ComponentConfig } from '@measured/puck'
 import { PuckIcon } from '../Common/Icon'
-import { PuckConfigurationType } from '../types'
 
 export interface FlexProps {
   content: any
@@ -12,11 +12,12 @@ export interface FlexProps {
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
 }
 
-export const PuckFlexConfiguration: PuckConfigurationType<FlexProps> = {
+export const PuckFlexConfiguration: ComponentConfig<{ props: FlexProps }> = {
   fields: {
     content: {
       type: 'slot',
     },
+
     direction: {
       type: 'select',
       options: [

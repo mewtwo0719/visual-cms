@@ -1,16 +1,11 @@
+import { ComponentConfig } from '@measured/puck'
 import { IconProps, PuckIcon, PuckIconConfiguration } from '../Common/Icon'
-import { PuckConfigurationType } from '../types'
 
 export interface TabsProps {
-  //   highlighted: string
-  //   title: string
-  //   description: string
-  //   action: string
   tabs: ({
     label: string
     Content: any
   } & IconProps)[]
-  active: string
 }
 
 export function PuckTabs(props: TabsProps) {
@@ -82,7 +77,7 @@ export function PuckTabs(props: TabsProps) {
   )
 }
 
-export const PuckTabsConfiguration: PuckConfigurationType<TabsProps> = {
+export const PuckTabsConfiguration: ComponentConfig<{ props: TabsProps }> = {
   //@ts-ignore
   fields: {
     tabs: {
@@ -94,29 +89,7 @@ export const PuckTabsConfiguration: PuckConfigurationType<TabsProps> = {
       },
     },
   },
-  resolveFields: (data, { changed, lastFields }) => {
-    if (!changed.tabs) return lastFields
 
-    const options = data.props.tabs?.map((tab) => {
-      return { label: tab.label, value: tab.label }
-    })
-
-    return {
-      tabs: {
-        type: 'array',
-        arrayFields: {
-          ...PuckIconConfiguration.fields,
-
-          Content: { type: 'slot' },
-          label: { type: 'text' },
-        },
-      },
-      active: {
-        type: 'select',
-        options,
-      },
-    }
-  },
   //   defaultProps: {
   //     tabs: [
   //       {
@@ -132,5 +105,5 @@ export const PuckTabsConfiguration: PuckConfigurationType<TabsProps> = {
   //     //   'This template is brought to you by TemplateMo website. Feel free to use this for a commercial purpose. You are not allowed to redistribute the template ZIP file on any other template website. Thank you.',
   //     // action: 'Free quote',
   //   },
-  render: ({ tabs, active }: TabsProps) => <PuckTabs tabs={tabs} active={active} />,
+  render: ({ tabs, active }: TabsProps) => <PuckTabs tabs={tabs} />,
 }

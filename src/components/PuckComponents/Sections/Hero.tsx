@@ -53,10 +53,10 @@ export function PuckHero(props: HeroProps) {
 
 export const PuckHeroConfiguration: PuckConfigurationType<HeroProps> = {
   fields: {
-    highlighted: { type: 'text' },
-    title: { type: 'text' },
-    description: { type: 'textarea' },
-    action: { type: 'text' },
+    highlighted: { type: 'text', contentEditable: true },
+    title: { type: 'text', contentEditable: true },
+    description: { type: 'textarea', contentEditable: true },
+    action: { type: 'text', contentEditable: true },
   },
   defaultProps: {
     highlighted: 'digital media agency',

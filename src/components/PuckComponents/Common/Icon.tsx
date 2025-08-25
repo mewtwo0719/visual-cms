@@ -1,8 +1,8 @@
+import { ComponentConfig } from '@measured/puck'
 import {} from 'lucide-react'
 import dynamicIconImports from 'lucide-react/dynamicIconImports'
 import dynamic from 'next/dynamic'
 import { ReactElement } from 'react'
-import { PuckConfigurationType } from '../types'
 
 export interface IconProps {
   iconName: string
@@ -33,7 +33,7 @@ export function PuckIcon(props: IconProps) {
   return Icon()
 }
 
-export const PuckIconConfiguration: PuckConfigurationType<IconProps> = {
+export const PuckIconConfiguration: ComponentConfig<{ props: IconProps }> = {
   fields: {
     iconName: {
       type: 'select',
